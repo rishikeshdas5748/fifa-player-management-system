@@ -3,6 +3,10 @@
   padding: 0px;
   box-sizing: border-box;
 }
+.bodycls{
+  background-image: url(back22.jpg);
+  background-size: cover;
+}
 
 nav{
   display: flex;
@@ -25,8 +29,10 @@ nav{
 }
 .nav-links li{
   list-style: none;
+  position: relative;
 }
 .nav-links a{
+  /* color: black; */
   color: rgb(226, 226, 226);
   text-decoration: none;
   letter-spacing: 3px;
@@ -49,4 +55,30 @@ nav{
 }
 .btn-area:hover{
   background: #2ecc71;
+}
+.nav-links li ul{
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border-radius: 0px 0px 4px 4px;
+  /* font-family: arial;
+  color: #222;
+  font-size: 14px;
+  padding: 22px 14px;
+  text-decoration: none; */
+}
+.nav-links li:hover ul{
+  display: block;
+}
+.nav-links li ul li {
+  width: 180px;
+  border-radius: 4px;
+}
+
+.nav-links li ul li a {
+  padding: 8px 14px;
+}
+.nav-links li ul li a:hover{
+  background-color: #f3f3f3;
 }

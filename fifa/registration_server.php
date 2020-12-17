@@ -6,6 +6,7 @@ include('database.php');
   $player_id = mysqli_real_escape_string($db, $_POST['playerid']);
   $player_name = mysqli_real_escape_string($db, $_POST['name']);
   $age = mysqli_real_escape_string($db, $_POST['age']);
+  $Position = mysqli_real_escape_string($db, $_POST['Position']);
   $overall_rating = mysqli_real_escape_string($db, $_POST['overall_rating']);
   $nationality = mysqli_real_escape_string($db, $_POST['nationality']);
 
@@ -15,6 +16,7 @@ include('database.php');
     if(empty($player_id)) { array_push($reg_errors, "PLAYER_ID IS REQUIRED");}
     if(empty($player_name)) { array_push($reg_errors, "PLAYER_NAME IS REQUIRED");}
     if(empty($age)) { array_push($reg_errors, "AGE IS REQUIRED");}
+    if(empty($Position)){ array_push($reg_errors, "POSITION IS REQUIRED");}
     if(empty($overall_rating)) { array_push($reg_errors, "OVERALL_RATING IS REQUIRED");}
     if(empty($nationality)) { array_push($reg_errors, "NATIONALITY IS REQUIRED");}
         //Checking Database for Existing users with same cridentials...
@@ -32,7 +34,7 @@ include('database.php');
     //Registering the user if no errors found...
 
     if (count($reg_errors) == 0) {
-      $query = ("INSERT INTO $dbName.player (Player_ID, Name, Age, Overall_rating, Nationality) VALUES('$player_id', '$player_name', '$age', '$overall_rating', '$nationality');");
+      $query = ("INSERT INTO $dbName.player (Player_ID, Name, Age, Position, Overall_rating, Nationality) VALUES('$player_id', '$player_name', '$age', '$Position', '$overall_rating', '$nationality');");
       mysqli_query($db, $query);
       $_SESSION['playerid'] = $player_id;
       $_SESSION["Success"] = "You are now logged in";
