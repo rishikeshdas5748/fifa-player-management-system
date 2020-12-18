@@ -16,7 +16,7 @@
     </div>
     <ul class="nav-links">
       <li>
-        <a href="#">HOME</a>
+        <a href="home.php">HOME</a>
       </li>
       <li>
         <a href="player_registration.php">REGISTER</a>
