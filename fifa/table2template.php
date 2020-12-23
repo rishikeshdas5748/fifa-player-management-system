@@ -27,7 +27,7 @@ function table2Template($results, $headers){
                         $i = $i+1;
                     }?>
                    <td>
-                        <a href="process.php?delete=<?php echo $row['Player_ID'] ?>&table=1;"
+                        <a href="process.php?delete=<?php echo $row['Player_ID'] ?>&table=<?php echo $_GET['del'] ?>"
                           class="btn btn-danger">DELETE</a>
 
                   </td>

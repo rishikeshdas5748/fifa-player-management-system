@@ -12,7 +12,7 @@
 <body>
   <nav class="nav">
     <div class="logo">
-      <h4>THE NAV</h4>
+      <h4 style= "color: green">FIFA PLAYER MANAGEMENT SYSTEM</h4>
     </div>
     <ul class="nav-links">
       <li>

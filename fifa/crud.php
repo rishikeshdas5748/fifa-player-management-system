@@ -25,80 +25,8 @@ include('database.php');
 include('tabletemplate.php');
 include('table2template.php');
 include('formtemplate.php');
-include('form_edit_template.php');
- if(isset($_GET['edit'])){
+// include('form_edit_template.php');
 
-      $id= $_GET['edit'];
-      $table= $_GET['table'];
-      $update = true;
-
-      switch ($table) {
-        case 1:
-
-            $sql= ("SELECT * FROM player_stats WHERE Player_ID= $id;");
-            $res = mysqli_query($db, $sql);
-            $user= mysqli_fetch_assoc($res);
-            if(count($user)==1){
-              $row = mysqli_fetch_array($user);
-              $Acceleration = $row['Acceleration'];
-              $Balance = $row['Balance'];
-              $Ball_Control = $row['Ball_Control'];
-              $Crossing = $row['Crossing'];
-              $Dribbling = $row['Dribbling'];
-              $Finishing = $row['Finishing'];
-              header('crud.php?choice=1');
-            }
-          break;
-
-         case 2:
-
-              $sql= ("SELECT * FROM club WHERE Player_ID= $id;");
-              $results = mysqli_query($db, $sql);
-              if(count($results)==1){
-                $row = mysqli_fetch_array($results);
-                $club = $row['Club'];
-                header('crud.php?choice=2');
-             }
-
-             break;
-
-         case 3:
-
-                $sqll= ("SELECT * FROM salary WHERE Player_ID= $id;");
-                $results = mysqli_query($db, $sqll);
-                if(count($results)==1){
-                  $row = mysqli_fetch_array($results);
-                  $Wage = $row['Wage'];
-                  $Value = $row['Value'];
-                  header('crud.php?choice=4');
-               }
-
-              break;
-
-         case 4:
-
-
-                  $sql= ("SELECT * FROM player WHERE Player_ID= $id;");
-                  $results = mysqli_query($db, $sql);
-                  if(count($results)==1){
-                    $row = mysqli_fetch_array($results);
-                    $Name = $row['Name'];
-                    $Age = $row['Age'];
-                    $Position = $row['Position'];
-                    $Overall_rating = $row['Overall_rating'];
-                    $Nationality = $row['Nationality'];
-                    header('crud.php?choice=3');
-                  }
-
-               break;
-
-        default:
-          // code...
-          break;
-      }
-
-
-    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -110,11 +38,11 @@ include('form_edit_template.php');
   <script src= "./bootstrap/js/popper.js"></script>
   <script src= "./bootstrap/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="style2.css">
-</head>
-  <body>
 
    <?php include('nav.php'); ?>
-
+</head>
+  <body>
+ 
 <?php
     if(isset($_GET['choice']))
     {
@@ -144,15 +72,7 @@ include('form_edit_template.php');
         ?>
 
 
-     <?php
-        $sql= ("SELECT Player_ID from $dbName.player");
-        $results = mysqli_query($db, $sql);
-        // $sql = ("SELECT * FROM $dbName.player_stats WHERE Player_ID = $id");
-        // $selectedValues = mysqli_query($db, $sql);
-
-        form_edit_Template($results, ["Acceleration" ,"Balance", "Ball_Control", "Crossing" , "Dribbling", "Finishing"], ["number", "number", "number", "number", "number", "number"])
-
-     ?>
+     
 
 
       <?php
@@ -180,13 +100,7 @@ include('form_edit_template.php');
         tableTemplate($results, ["Player_ID", "Club"])
         ?>
      
-     <?php
-       $sql= ("SELECT Player_ID from $dbName.player");
-       $results = mysqli_query($db, $sql);
-
-       form_edit_Template($results, ["Club"], ["text"])
-
-       ?>
+   
 
           <?php
           break;
@@ -215,13 +129,7 @@ include('form_edit_template.php');
         ?>
 
 
-     <?php
-     $sql= ("SELECT Player_ID from $dbName.player");
-     $results = mysqli_query($db, $sql);
-
-     form_edit_Template($results, ["Name" ,"Age", "Position", "Overall_rating" , "Nationality"], ["text", "number", "text", "number", "text"])
-
-     ?>
+ 
 
           <?php
           break;
@@ -248,13 +156,7 @@ include('form_edit_template.php');
            ?>
 
     
-        <?php
-          $sql= ("SELECT Player_ID from $dbName.player");
-          $results = mysqli_query($db, $sql);
-
-          form_edit_Template($results, ["Wage" ,"Value"], ["number", "number"])
-
-          ?>
+    
 
           <?php
           break;
@@ -353,8 +255,8 @@ include('form_edit_template.php');
 
 
         if (isset($_POST['insert'])) {
-          $player_id= $_POST['player_id'];
-          $club= $_POST['club'];
+          $player_id= $_POST['Player_ID'];
+          $club= $_POST['Club'];
 
           $query = ("INSERT INTO $dbName.club (Player_ID, Club)
           VALUES('$player_id', '$club');");
@@ -365,7 +267,7 @@ include('form_edit_template.php');
           $_SESSION['msg_type']= "success";
 
 
-          header('Refresh: 0');
+          // header('Refresh: 0');
 
         }
 
@@ -402,9 +304,9 @@ include('form_edit_template.php');
 
         <?php
         if (isset($_POST['insert'])) {
-          $player_id= $_POST['player_id'];
-          $Wage= $_POST['wage'];
-          $Value= $_POST['value'];
+          $player_id= $_POST['Player_ID'];
+          $Wage= $_POST['Wage'];
+          $Value= $_POST['Value'];
 
           $query = ("INSERT INTO $dbName.salary (Player_ID, Wage, Value)
           VALUES('$player_id', '$Wage', '$Value');");

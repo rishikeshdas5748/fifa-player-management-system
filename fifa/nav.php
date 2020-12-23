@@ -1,6 +1,6 @@
 <nav>
       <div class="logo">
-        <h4>THE NAV</h4>
+        <h4>FIFA PLAYER MANAGEMENT SYSTEM</h4>
       </div>
       <ul class="nav-links">
         <li>
@@ -12,27 +12,27 @@
         <li>
           <a href="#">UPDATE</a>
           <ul>
-            <li><a style="color: black" href="crud.php?choice=1">Player Stats</a></li>
-            <li><a style="color: black" href="crud.php?choice=2">Club</a></li>
-            <li><a style="color: black" href="crud.php?choice=3">Player Details</a></li>
-            <li><a style="color: black" href="crud.php?choice=4">Salary</a></li>
+            <li><a style="color: black" href="crud.php?choice=1&del=1">Player Stats</a></li>
+            <li><a style="color: black" href="crud.php?choice=2&del=2">Club</a></li>
+            <li><a style="color: black" href="crud.php?choice=3&del=4">Player Details</a></li>
+            <li><a style="color: black" href="crud.php?choice=4&del=3">Salary</a></li>
           </ul>
         </li>
         <li>
           <a href="#">INSERT</a>
           <ul>
-            <li><a style="color: black" href="crud.php?choice=5">Player Stats</a></li>
-            <li><a style="color: black" href="crud.php?choice=6">Club</a></li>
-            <li><a style="color: black" href="crud.php?choice=7">Salary</a></li>
+            <li><a style="color: black" href="crud.php?choice=5&del=1">Player Stats</a></li>
+            <li><a style="color: black" href="crud.php?choice=6&del=2">Club</a></li>
+            <li><a style="color: black" href="crud.php?choice=7&del=3">Salary</a></li>
           </ul>
         </li>
         <li>
           <a href="#">SEARCH</a>
           <ul>
-            <li><a style="color: black" href="crud.php?choice=8">Player Details</a></li>
-            <li><a style="color: black" href="crud.php?choice=9">Player Stats</a></li>
-            <li><a style="color: black" href="crud.php?choice=10">Club</a></li>
-            <li><a style="color: black" href="crud.php?choice=11">Salary</a></li>
+            <li><a style="color: black" href="crud.php?choice=8&del=4">Player Details</a></li>
+            <li><a style="color: black" href="crud.php?choice=9&del=1">Player Stats</a></li>
+            <li><a style="color: black" href="crud.php?choice=10&del=2">Club</a></li>
+            <li><a style="color: black" href="crud.php?choice=11&del=3">Salary</a></li>
           </ul>
         </li>
       </ul>
