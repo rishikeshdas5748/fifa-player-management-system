@@ -11,7 +11,7 @@ $Crossing = '';
 $Dribbling = '';
 $Finishing = '';
 
-$Name = '';
+$Namee = '';
 $Age = '';
 $Position = '';
 $Overall_rating = '';
@@ -20,7 +20,7 @@ $Nationality = '';
 $club = '';
 
 $Wage = '';
-$Value = '';
+$Valuee = '';
 
   if(isset($_GET['delete'])){
 
@@ -106,7 +106,7 @@ $Value = '';
     //         if(count($results)==1){
     //           $row = mysqli_fetch_array($results);
     //           $Wage = $row['Wage'];
-    //           $Value = $row['Value'];
+    //           $Valuee = $row['Valuee'];
     //           header('crud.php?choice=4');
     //         }
 
@@ -137,10 +137,10 @@ $Value = '';
 
     // }
 
-    if(isset($_POST['edit'])){
-      $id = $_POST['Player_ID'];
+    // if(isset($_POST['edit'])){
+    //   $id = $_POST['Player_ID'];
       
-    }
+    // }
 
 
  ?>

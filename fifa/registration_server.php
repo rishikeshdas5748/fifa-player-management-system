@@ -4,7 +4,7 @@ include('database.php');
   //Register user...
 
   $player_id = mysqli_real_escape_string($db, $_POST['playerid']);
-  $player_name = mysqli_real_escape_string($db, $_POST['name']);
+  $player_name = mysqli_real_escape_string($db, $_POST['Namee']);
   $age = mysqli_real_escape_string($db, $_POST['age']);
   $Position = mysqli_real_escape_string($db, $_POST['Position']);
   $overall_rating = mysqli_real_escape_string($db, $_POST['overall_rating']);
@@ -34,7 +34,7 @@ include('database.php');
     //Registering the user if no errors found...
 
     if (count($reg_errors) == 0) {
-      $query = ("INSERT INTO $dbName.player (Player_ID, Name, Age, Position, Overall_rating, Nationality) VALUES('$player_id', '$player_name', '$age', '$Position', '$overall_rating', '$nationality');");
+      $query = ("INSERT INTO $dbName.player (Player_ID, Namee, Age, Position, Overall_rating, Nationality) VALUES('$player_id', '$player_name', '$age', '$Position', '$overall_rating', '$nationality');");
       mysqli_query($db, $query);
       $_SESSION['playerid'] = $player_id;
       $_SESSION["Success"] = "You are now logged in";

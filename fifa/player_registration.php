@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if (!isset($_SESSION['username'])) {
+  echo $_SESSION['msg'] = "!YOU MUST LOG IN TO VIEW THIS PAGE!";
+  header('location: adminlogin.php');
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -59,7 +67,7 @@
 
         <div class="textbox">
           <i class="fas fa-user"></i>
-          <input type="text" name="name" placeholder="Player_Name" required>
+          <input type="text" name="Namee" placeholder="Player_Name" required>
         </div>
 
         <div class="textbox">

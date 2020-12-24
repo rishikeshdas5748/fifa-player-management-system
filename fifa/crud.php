@@ -8,7 +8,7 @@ $Crossing = '';
 $Dribbling = '';
 $Finishing = '';
 
-$Name = '';
+$Namee = '';
 $Age = '';
 $Position = '';
 $Overall_rating = '';
@@ -17,7 +17,7 @@ $Nationality = '';
 $club = '';
 
 $Wage = '';
-$Value = '';
+$Valuee = '';
 
 $id = '';
 
@@ -125,7 +125,7 @@ include('formtemplate.php');
         $results = mysqli_query($db, $display);
         // pre_r($results);
 
-        tableTemplate($results, ["Player_ID", "Name" ,"Age", "Position", "Overall_rating" , "Nationality"])
+        tableTemplate($results, ["Player_ID", "Namee" ,"Age", "Position", "Overall_rating" , "Nationality"])
         ?>
 
 
@@ -152,7 +152,7 @@ include('formtemplate.php');
             $display = ("SELECT * FROM $dbName.salary");
             $results = mysqli_query($db, $display);
 
-            tableTemplate($results, ["Player_ID", "Wage" ,"Value"])
+            tableTemplate($results, ["Player_ID", "Wage" ,"Valuee"])
            ?>
 
     
@@ -207,7 +207,7 @@ include('formtemplate.php');
 
 
             $query = ("INSERT INTO $dbName.player_stats (Player_ID, Acceleration, Balance, Ball_Control, Crossing, Dribbling, Finishing)
-            VALUES('$player_id', '$Acceleration', '$Balance', '$Ball_Control', '$Crossing', '$Dribbling', '$Finishing');");
+            Value('$player_id', '$Acceleration', '$Balance', '$Ball_Control', '$Crossing', '$Dribbling', '$Finishing');");
 
             mysqli_query($db, $query) or die("CONNECTION PROBLEM");
 
@@ -259,7 +259,7 @@ include('formtemplate.php');
           $club= $_POST['Club'];
 
           $query = ("INSERT INTO $dbName.club (Player_ID, Club)
-          VALUES('$player_id', '$club');");
+          Value('$player_id', '$club');");
 
           mysqli_query($db, $query);
 
@@ -291,14 +291,14 @@ include('formtemplate.php');
           $display = ("SELECT * FROM $dbName.salary");
           $results = mysqli_query($db, $display);
 
-            table2Template($results, ["Player_ID", "Wage" ,"Value"])
+            table2Template($results, ["Player_ID", "Wage" ,"Valuee"])
            ?>
                      
         <?php
           $sql= ("SELECT Player_ID from $dbName.player");
           $results = mysqli_query($db, $sql);
 
-          formTemplate($results, ["Wage" ,"Value"], ["number", "number"])
+          formTemplate($results, ["Wage" ,"Valuee"], ["number", "number"])
 
           ?>
 
@@ -306,10 +306,10 @@ include('formtemplate.php');
         if (isset($_POST['insert'])) {
           $player_id= $_POST['Player_ID'];
           $Wage= $_POST['Wage'];
-          $Value= $_POST['Value'];
+          $Valuee= $_POST['Valuee'];
 
-          $query = ("INSERT INTO $dbName.salary (Player_ID, Wage, Value)
-          VALUES('$player_id', '$Wage', '$Value');");
+          $query = ("INSERT INTO $dbName.salary (Player_ID, Wage, Valuee)
+          Value('$player_id', '$Wage', '$Valuee');");
 
           mysqli_query($db, $query);
 
@@ -317,7 +317,7 @@ include('formtemplate.php');
           $_SESSION['msg_type']= "success";
 
 
-          header('Refresh: 0');
+          header("Location: crud.php?choice=7");
 
         }
 
@@ -332,7 +332,7 @@ include('formtemplate.php');
         $results = mysqli_query($db, $display);
         // pre_r($results);
 
-          table2Template($results, ["Player_ID", "Name" ,"Age", "Position", "Overall_rating" , "Nationality"])
+          table2Template($results, ["Player_ID", "Namee" ,"Age", "Position", "Overall_rating" , "Nationality"])
         ?>
         
    </div>
@@ -382,7 +382,7 @@ include('formtemplate.php');
             $display = ("SELECT * FROM $dbName.salary");
             $results = mysqli_query($db, $display);
 
-            table2Template($results, ["Player_ID", "Wage" ,"Value"])
+            table2Template($results, ["Player_ID", "Wage" ,"Valuee"])
              ?>
 
           </div>

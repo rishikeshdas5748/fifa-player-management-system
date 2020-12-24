@@ -41,7 +41,7 @@ include('database.php');
             echo editForm("$id"
                     , ['Acceleration', 'Balance', 'Ball_control', 'Crossing', 'Dribbling', 'Finishing']
                     ,["$Acceleration", "$Balance", "$Ball_Control", "$Crossing", "$Dribbling", "$Finishing"]
-                    , ['number', 'number', 'number', 'number', 'number', 'number']);
+                    , ['number', 'number', 'number', 'number', 'number', 'number'], "$table");
              }
             break;
 
@@ -52,7 +52,7 @@ include('database.php');
             if(count($results)==1){
               $row = mysqli_fetch_array($results);
               $Club = $row['Club'];
-                echo editForm("$id", ['Club'],["$Club"], ['text']);
+                echo editForm("$id", ['Club'],["$Club"], ['text'], "$table");
               // header('crud.php?choice=2');
             }
             break;
@@ -63,8 +63,8 @@ include('database.php');
             if(count($results)==1){
               $row = mysqli_fetch_array($results);
               $Wage = $row['Wage'];
-              $Value = $row['Value'];
-                echo editForm("$id", ['Wage', 'Value'],["$Wage", "$Value"], ['number', 'number']);
+              $Valuee = $row['Valuee'];
+                echo editForm("$id", ['Wage', 'Valuee'],["$Wage", "$Valuee"], ['number', 'number'], "$table");
             //   header('crud.php?choice=4');
             }
             break;
@@ -74,12 +74,12 @@ include('database.php');
             $results = mysqli_query($db, $sql);
             if(count($results)==1){
               $row = mysqli_fetch_array($results);
-              $Name = $row['Name'];
+              $Namee = $row['Namee'];
               $Age = $row['Age'];
               $Position = $row['Position'];
               $Overall_rating = $row['Overall_rating'];
               $Nationality = $row['Nationality'];
-                echo editForm("$id", ['Name', 'Age', 'Position', 'Overall_rating', 'Nationality'],["$Name", "$Age", "$Position", "$Overall_rating", "$Nationality"], ['text', 'number', 'text', 'number', 'text']);
+                echo editForm("$id", ['Namee', 'Age', 'Position', 'Overall_rating', 'Nationality'],["$Namee", "$Age", "$Position", "$Overall_rating", "$Nationality"], ['text', 'number', 'text', 'number', 'text'], "$table");
               // header('crud.php?choice=3');
             }
           break;
